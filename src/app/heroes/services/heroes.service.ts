@@ -9,10 +9,10 @@ export class HeroesService {
 
   private baseUrl: string = environments.baseUrl;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getHeroes(): Observable<Hero[]> {
-    return this.httpClient.get<Hero[]>(`${ this.baseUrl }/heroes`)
+    return this.http.get<Hero[]>(`${ this.baseUrl }/heroes`)
   }
 
 }
