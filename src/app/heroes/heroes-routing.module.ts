@@ -6,35 +6,19 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
 import { NewPageComponent } from './pages/new-page/new-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 
+
+// localhost:4200/heroes
 const routes: Routes = [
   {
     path: '',
     component: LayoutPageComponent,
     children: [
-      {
-        path: 'new-hero',
-        component: NewPageComponent
-      },
-      {
-        path: 'search',
-        component: SearchPageComponent
-      },
-      {
-        path: 'edit/:id',
-        component: NewPageComponent
-      },
-      {
-        path: 'list',
-        component: ListPageComponent
-      },
-      {
-        path: ':id',
-        component: HeroPageComponent
-      },
-      {
-        path: '**',
-        redirectTo: 'list'
-      }
+      { path: 'new-hero', component: NewPageComponent },
+      { path: 'search', component: SearchPageComponent },
+      { path: 'edit/:id', component: NewPageComponent },
+      { path: 'list', component: ListPageComponent },
+      { path: ':id', component: HeroPageComponent },
+      { path: '**', redirectTo: 'list' },
     ]
   }
 ];
